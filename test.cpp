@@ -26,7 +26,7 @@
   Open the serial monitor at 9600 baud to see the output
 */
 
-#include <Wire.h>
+#include "Wire.h"
 
 #include "MLX90640_API.h"
 #include "MLX90640_I2C_Driver.h"

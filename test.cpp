@@ -42,7 +42,17 @@ int main()
 {
   Wire.begin();
   Wire.setClock(400000); //Increase I2C clock speed to 400kHz
+
   Serial.begin(9600);
+  while (!Serial); //Wait for user to open terminal
+  Serial.println("MLX90640 IR Array Example");
+
+  if (isConnected() == false)
+  {
+    Serial.println("MLX90640 not detected at default I2C addres. Please check wiring. Freezing.");
+    while (1);
+  }
+  Serial.println("MLX90640 online!");
 
   //Get device parameters - We only have to do this once
   int status;
